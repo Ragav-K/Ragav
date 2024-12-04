@@ -1,0 +1,44 @@
+/*SCENARIO 1
+An event organizer wants a program to sell tickets for an event.
+Write a program that asks for the umber of tickets a customer wants to buy and the price of each ticket.
+If the customer buys more a than 5 tickets, apply a 20% discount and if the customer buys more than 10 tickets apply 30 % discount.
+Display the total cost after applying the discount 
+AIM 
+To write a C program to compute the discount based on ticket count and generate the bill amount after discount.*/
+
+#include<stdio.h>
+//#include<conio.h>
+
+int main()
+{
+   int ticket_price , no_of_ticket ;
+   float price , final_price , discount  = 0;
+
+   printf("\nEnter the number of tickets you want to buy: ");
+   scanf("%d",&no_of_ticket);
+   printf("\nEnter the price of one ticket: ");
+   scanf("%d",&ticket_price);  
+
+   price = no_of_ticket*ticket_price;
+   printf("\nThe Total amount is: %0.2f",price);
+
+   if(no_of_ticket<=5)
+   {
+    printf("\nThere is no discount.");
+   }
+   else if(no_of_ticket>5 && no_of_ticket<=10)
+   {
+    discount = price*0.2;
+    printf("\nThe Discount is: %0.2f",discount);
+   }
+   else if(no_of_ticket>10)
+   {
+    discount = price*0.3;
+    printf("\nThe Discount is: %0.2f",discount);
+   }
+
+   final_price = price - discount;
+   printf("\nThe Final Amount is: %0.2f",final_price);
+   //getch();
+   
+}
